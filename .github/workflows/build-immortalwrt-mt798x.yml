@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       USE_MTWIFI_CFG:
-        description: 'Use mtwifi-cfg'
+        description: 'Use OpenWrt 原生 luci 无线控制界面'
         required: true
         default: true
         type: boolean
