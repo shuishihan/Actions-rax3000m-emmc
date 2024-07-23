@@ -18,9 +18,9 @@ on:
   workflow_dispatch:
     inputs:
       USE_MTWIFI_CFG:
-        description: 'Use mtwifi-cfg'
+        description: '使用 MTK SDK 无线控制界面'
         required: true
-        default: true
+        default: false
         type: boolean
       USE_NX30PRO_EEPROM:
         description: 'Use nx30pro eeprom'
