@@ -1,4 +1,3 @@
-
 #
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
@@ -18,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       USE_MTWIFI_CFG:
-        description: '使用 MTK SDK 无线控制界面'
+        description: 'Use mtwifi-cfg'
         required: true
-        default: false
+        default: true
         type: boolean
       USE_NX30PRO_EEPROM:
         description: 'Use nx30pro eeprom'
@@ -92,9 +91,13 @@ jobs:
         git config --global user.name "github-actions[bot]"
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
         #git merge FETCH_HEAD
+        # istore
+        echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+        ./scripts/feeds update istore
+        ./scripts/feeds install -d y -p istore luci-app-store
         ./scripts/feeds update -a && ./scripts/feeds install -a
         git clone  https://github.com/shuishihan/luci-app-easymesh.git package/feeds/luci/luci-app-easymesh
-        git clone  https://github.com/rufengsuixing/luci-app-adguardhome.git package/feeds/luci/luci-app-adguardhome
+        git clone  https://github.com/rufengsuixing/luci-app-adguardhome.git package/feeds/luci/luci-app-adguardhome 
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
     - name: 导入补丁和配置
