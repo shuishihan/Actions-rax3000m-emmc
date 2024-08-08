@@ -92,9 +92,9 @@ jobs:
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
         #git merge FETCH_HEAD
         # istore
-        echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-        ./scripts/feeds update istore
-        ./scripts/feeds install -d y -p istore luci-app-store
+        #echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+        #./scripts/feeds update istore
+        #./scripts/feeds install -d y -p istore luci-app-store
         ./scripts/feeds update -a && ./scripts/feeds install -a
         git clone  https://github.com/shuishihan/luci-app-easymesh.git package/feeds/luci/luci-app-easymesh
         git clone  https://github.com/rufengsuixing/luci-app-adguardhome.git package/feeds/luci/luci-app-adguardhome 
