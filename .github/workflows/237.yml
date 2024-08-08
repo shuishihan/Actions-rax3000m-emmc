@@ -93,7 +93,7 @@ jobs:
         #git merge FETCH_HEAD
         ./scripts/feeds update -a && ./scripts/feeds install -a
         git clone  https://github.com/shuishihan/luci-app-easymesh.git package/feeds/luci/luci-app-easymesh
-        #git clone  https://github.com/rufengsuixing/luci-app-adguardhome.git package/feeds/luci/luci-app-adguardhome 
+        git clone  https://github.com/rufengsuixing/luci-app-adguardhome.git package/feeds/luci/luci-app-adguardhome 
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
     - name: 导入补丁和配置
