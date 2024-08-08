@@ -1,3 +1,4 @@
+#21.02
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_mt7981=y
 CONFIG_TARGET_mediatek_mt7981_DEVICE_cmcc_rax3000m-emmc=y
